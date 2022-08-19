@@ -1,3 +1,5 @@
+using FluentAssertions;
+
 namespace Palindrome.Tests;
 
 public class PalindromeTests
@@ -7,7 +9,7 @@ public class PalindromeTests
    {
       var word = "b";
 
-      Assert.True(word.IsAPalindrome());
+      word.IsAPalindrome().Should().BeTrue();
    }
 
    [Fact]
@@ -15,7 +17,7 @@ public class PalindromeTests
    {
       var word = "bb";
 
-      Assert.True(word.IsAPalindrome());
+      word.IsAPalindrome().Should().BeTrue();
    }
 
    [Fact]
@@ -23,7 +25,7 @@ public class PalindromeTests
    {
       var word = "sarabaras";
 
-      Assert.True(word.IsAPalindrome());
+      word.IsAPalindrome().Should().BeTrue();
    }
 
    [Fact]
@@ -31,6 +33,6 @@ public class PalindromeTests
    {
       var word = "casimrisac";
 
-      Assert.False(word.IsAPalindrome());
+      word.IsAPalindrome().Should().BeFalse();
    }
 }
