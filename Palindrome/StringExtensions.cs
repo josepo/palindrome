@@ -4,10 +4,18 @@ public static class StringExtensions
 {
    public static bool IsAPalindrome(this string word)
    {
-      for (var i = 0; i < word.Length / 2; i++)
-         if (word[i] != word[word.Length - (i + 1)])
-            return false;
+      var i = 0;
+      var length = word.Length;
+      bool palindrome = true;
 
-      return true;
+      while (palindrome && i < length / 2)
+      {
+         if (word[i] != word[length - (i + 1)])
+            palindrome = false;
+
+         i++;
+      }
+
+      return palindrome;
    }
 }
