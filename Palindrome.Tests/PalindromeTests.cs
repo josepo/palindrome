@@ -21,9 +21,17 @@ public class PalindromeTests
    }
 
    [Fact]
-   public void LongPalindrome()
+   public void OddPalindrome()
    {
       var word = "sarabaras";
+
+      word.IsAPalindrome().Should().BeTrue();
+   }
+
+   [Fact]
+   public void EvenPalindrome()
+   {
+      var word = "abccba";
 
       word.IsAPalindrome().Should().BeTrue();
    }
