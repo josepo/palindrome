@@ -4,8 +4,8 @@ public static class StringExtensions
 {
    public static bool IsAPalindrome(this string word)
    {
-      var i = 0;
-      var length = word.Length;
+      int i = 0;
+      int length = word.Length;
       bool palindrome = true;
 
       while (palindrome && i < length / 2)
