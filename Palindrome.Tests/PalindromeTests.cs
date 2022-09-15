@@ -4,43 +4,14 @@ namespace Palindrome.Tests;
 
 public class PalindromeTests
 {
-   [Fact]
-   public void OneLetterWord()
+   [Theory]
+   [InlineData("b", true)]
+   [InlineData("bb", true)]
+   [InlineData("sarabaras", true)]
+   [InlineData("abccba", true)]
+   [InlineData("casimrisac", false)]
+   public void IsAPalindrome(string word, bool expected)
    {
-      var word = "b";
-
-      word.IsAPalindrome().Should().BeTrue();
-   }
-
-   [Fact]
-   public void SameLetterTwiceWord()
-   {
-      var word = "bb";
-
-      word.IsAPalindrome().Should().BeTrue();
-   }
-
-   [Fact]
-   public void OddPalindrome()
-   {
-      var word = "sarabaras";
-
-      word.IsAPalindrome().Should().BeTrue();
-   }
-
-   [Fact]
-   public void EvenPalindrome()
-   {
-      var word = "abccba";
-
-      word.IsAPalindrome().Should().BeTrue();
-   }
-
-   [Fact]
-   public void NotAPalindrome()
-   {
-      var word = "casimrisac";
-
-      word.IsAPalindrome().Should().BeFalse();
+      word.IsAPalindrome().Should().Be(expected);
    }
 }
